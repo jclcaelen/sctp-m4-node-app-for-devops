@@ -1,4 +1,4 @@
-# version 2.1
+version: 2.1
 # orbs - reusable packages for use
 orbs:
   node: circleci/node@5.0.1
@@ -12,7 +12,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run : |
+      - run: |
         echo "Installing dependencies..."
         npm install
   test:
@@ -22,7 +22,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
-      - run : |
+      - run: |
         echo "Running tests..."
         npm run test
 # workflow - defines what sequence will the jobs run
