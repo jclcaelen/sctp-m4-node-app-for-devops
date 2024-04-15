@@ -13,8 +13,8 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run: |
-        echo "Installing dependencies..."
-        npm install
+          echo "Installing dependencies..."
+          npm install
   test:
     docker:
       -  image: cimg/node:16.10
@@ -23,8 +23,8 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run: |
-        echo "Running tests..."
-        npm run test
+          echo "Running tests..."
+          npm run test
 # workflow - defines what sequence will the jobs run
 workflows:
   simple_workflow: #workflow name
