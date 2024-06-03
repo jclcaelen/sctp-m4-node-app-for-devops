@@ -35,13 +35,13 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Build Docker Image
-          command: docker build -t genkaitoppa/education-space:latest3
+          command: docker compose up --build # docker build -t genkaitoppa/education-space:latest3
       - run:
           name: Login to Docker Hub
           command: echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
       - run:
           name: Push Docker Image
-          command: docker push genkaitoppa/education-space:latest3
+          command: docker tag genkaitoppa/education-space:latest3 genkaitoppa/education-space:latest3 #docker push genkaitoppa/education-space:latest3
 
 # workflow - defines what sequence will the jobs run
 workflows:
