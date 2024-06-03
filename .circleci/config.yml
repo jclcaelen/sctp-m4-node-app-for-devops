@@ -35,7 +35,7 @@ jobs:
           docker_layer_caching: true
       - run:
           name: Build Docker Image
-          command: docker compose up --build # docker build -t genkaitoppa/education-space:latest3
+          command: docker-compose build # docker build -t genkaitoppa/education-space:latest3
       - run:
           name: Login to Docker Hub
           command: echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_USERNAME --password-stdin
